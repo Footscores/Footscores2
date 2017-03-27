@@ -34,14 +34,14 @@ class Home extends Component {
                         </div>
                         <div className='col-md-6'>
                           <img alt='estadio' className="img-home img-circle img-responsive pull-right"
-                            src={require("../img/estadio.jpg")}></img>
+                            src="img/estadio.jpg"></img>
                         </div>
                     </div>
                     <hr className="content-divider"></hr>
                     <div className='row'>
                       <div className='col-md-6'>
                         <img alt='balon' className="img-home img-circle img-responsive  pull-left"
-                          src={require("../img/balon.jpg")}></img>
+                          src="img/balon.jpg"></img>
                       </div>
                         <div className='col-md-6'>
                             <div className="box">
