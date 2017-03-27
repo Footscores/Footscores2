@@ -1,3 +1,18 @@
+.container-fluid {
+     padding:0 !important;
+     margin: 0 !important;
+}
+.row
+{
+  padding:0 !important;
+  margin: 0 !important;
+}
+html, body. div{
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
 .welcome
 {
   text-align: center;
