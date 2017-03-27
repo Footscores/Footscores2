@@ -26,9 +26,12 @@ class Navegacion extends Component {
                           <LinkContainer to="/leaderboard">
                             <NavItem eventKey={3} onClick={this.props.onClickLeaderboard}>Leaderboard</NavItem>
                           </LinkContainer>
+                          <LinkContainer to="/">
+                            <AccountsWrapper />
+                          </LinkContainer>
                         </Nav>
                         <Nav pullRight>
-                          <AccountsWrapper />
+                          {/* Ir al perfil si está conectado */}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

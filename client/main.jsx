@@ -1,4 +1,5 @@
 import React from 'react';
+import cors from 'cors';
 //import ReactDOM from 'react-dom';
 import {browserHistory, Router, Route, IndexRoute} from 'react-router';
 import { Meteor } from 'meteor/meteor';
