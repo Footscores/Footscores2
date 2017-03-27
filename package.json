@@ -2,6 +2,7 @@
   "name": "Footscores2",
   "private": true,
   "scripts": {
+    "lint": "eslint .",
     "start": "meteor run"
   },
   "dependencies": {
@@ -16,5 +17,29 @@
     "react-router": "^3.0.2",
     "react-router-bootstrap": "^0.23.1",
     "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ],
+    "settings": {
+      "import/resolver": "meteor"
+    },
+    "rules": {}
   }
 }
