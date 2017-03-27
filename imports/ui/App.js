@@ -37,6 +37,7 @@ const loginStyle={
   }
 };
 
+
 class App extends Component {
 
   constructor(props) {
@@ -51,7 +52,7 @@ class App extends Component {
       signupModalOpen: false,
       loginModelOpen: false,
       token: '',
-      thereIsToken: false
+      thereIsToken: true
     };
     this.closeSignupModal = this.closeSignupModal.bind(this);
     this.openSignupModal = this.openSignupModal.bind(this);
