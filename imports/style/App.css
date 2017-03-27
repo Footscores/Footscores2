@@ -1,0 +1,154 @@
+.welcome
+{
+  text-align: center;
+
+}
+.img-league
+{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  height: 7em;
+  width: 7em;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  cursor: pointer; cursor: hand;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.60);
+}
+.user-guess
+{
+  color: #fff;
+  background-color: #04BC00;
+  border: none;
+  margin-top: 0.1em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.30);
+}
+.img-league:hover
+{
+  margin-bottom: 0em;
+  height: 8em;
+  width: 8em;
+  background-repeat: no-repeat;
+  background-position: 70%;
+  border-radius: 70%;
+  background-size: 100% auto;
+  cursor: pointer; cursor: hand;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.60);
+
+}
+.content-divider
+{
+    margin: 2em 0;
+}
+#welcome-list
+{
+  text-align: center;
+  list-style-type:none;
+  font-size: 1.2em;
+}
+h1
+{
+  text-align: center;
+}
+h3
+{
+  text-align: center;
+}
+.box{
+    border-radius: 1em;
+    box-shadow: 1em 1em 2em 0em rgba(0, 0, 0, 0.16), 0em 2em 4em 0em rgba(0, 0, 0, 0.12);
+    padding: 1em 2em;
+    display: block;
+    margin-top: 3em;
+    border: 0.1em solid rgba(0, 0, 0, 0.1);
+}
+.box li, p
+{
+  margin: 0 0 0.3em 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+.box h3
+{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+}
+.box-icon
+{
+  margin: 0 auto;
+  vertical-align: top;
+  margin-top: -3em;
+  display: table;
+}
+.thead-inverse
+{
+  /*background-color: #292b2c;*/
+  background-color: #04BC00;
+  color: #fff;
+}
+.table-matches
+{
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.30);
+  margin-bottom: 2em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+}
+.loader {
+    border: 1.2em solid #f3f3f3; /* Light grey */
+    border-top: 1.2em solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    animation: spin 2s linear infinite;
+    top:50%;
+    left:50%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.matches
+{
+  height: 6em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input:focus {
+    outline: none;
+}
+input
+{
+  /*background-color: #04BC00;*/
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a
+{
+  /*background-image: none !important;
+  background-color: #04BC00 !important;*/
+  background-image: linear-gradient(to bottom,#00fb2e 0,#008a12 100%);
+}
+.guessButton
+{
+  color: #fff;
+  background-color: #04BC00;
+  border: none;
+  margin-top: 0.1em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.30);
+}
+.img-home
+{
+  height: 25em;
+  width: 25em;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  box-shadow: 0 1em 3em rgba(0,0,0,0.60);
+}
