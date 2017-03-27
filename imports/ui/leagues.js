@@ -1,8 +1,12 @@
+import axios from 'axios';
 import React, {Component} from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 import '../style/App.css';
 import Partido from './partido';
-import axios from 'axios';
+import football from './../api/football-data.js';
+
 const URL = "https://footscores.herokuapp.com";
+
 class Leagues extends Component {
 
     constructor(props) {
@@ -124,4 +128,11 @@ class Leagues extends Component {
         );
     }
 }
-export default Leagues;
+
+export default createContainer(() => {
+  return {
+    fixtures: football.getMatchesDayBefore((err, response) => {
+      return response.data;
+    }),
+  };
+}, Leagues);
