@@ -187,11 +187,11 @@ class App extends Component {
           </div>
           {this.state.thereIsToken ?
             (
-              <div className='col-md-9'>
+              <div className='col-md-10'>
                 {React.cloneElement(this.props.children, {...this.state})}
               </div>
             ):(
-              <div className='col-md-9'>
+              <div className='col-md-10'>
                 <div className='row'>
                   <div className='col-md-12'>
                     <h1>Bienvenido a FootScores!</h1>
