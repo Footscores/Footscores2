@@ -3,6 +3,7 @@ import React from 'react';
 import {browserHistory, Router, Route, IndexRoute} from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
+import '../imports/startup/accounts-config.js';
 import App from '../imports/ui/App.js';
 import Home from '../imports/ui/home.js';
 import Leaderboard from '../imports/ui/leaderboard.js';
