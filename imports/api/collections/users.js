@@ -34,12 +34,6 @@ Schemas.Users = new SimpleSchema({
     min: 0,
     optional: false
   },
-  favoritecompetition: {
-    type: String,
-    label: "User's name and last name",
-    max: 100,
-    optional: true
-  },
   favoriteCompetition: {
     type: String,
     label: "User's favorite's competition code",

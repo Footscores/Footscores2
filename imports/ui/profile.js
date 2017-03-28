@@ -47,8 +47,11 @@ class Profile extends Component {
               <div className='row' id="profileBackPic">
                 <div className='col-md-4'>
                   <div className="boxProfile">
-                      <img alt='Imagen de Perfil' src='img/avatar.jpg' id='profilePic' className='img-responsive'></img>
+                      <img alt='Imagen de Perfil' src={this.props.currentUser.profile.picture} id='profilePic' className='img-responsive'></img>
                       <div className='row'>
+                        {
+                          this.props.currentUser.profile.name?<h2>{this.props.currentUser.profile.name}</h2>:<h2>Sin nombre</h2>
+                        }
                         <h4 id='profileName'>{this.props.currentUser.username}</h4>
                       </div>
                       <hr className="content-divider-profile"></hr>
@@ -58,7 +61,7 @@ class Profile extends Component {
                           <h5 className='statsTittle'><strong>Puntaje</strong></h5>
                         </div>
                         <div className='col-md-6'>
-                          <h5 className='stat'><strong>100</strong></h5>
+                          <h5 className='stat'><strong>{this.props.currentUser.profile.score}</strong></h5>
                         </div>
                       </div>
                       <div className='row'>
@@ -66,15 +69,15 @@ class Profile extends Component {
                           <h5 className='statsTittle'>Mejor Racha</h5>
                         </div>
                         <div className='col-md-6'>
-                          <h5 className='stat'>12</h5>
+                          <h5 className='stat'>{this.props.currentUser.profile.longestStreak}</h5>
                         </div>
                       </div>
                       <div className='row'>
                         <div className='col-md-6'>
-                          <h5 className='statsTittle'>Racha Actual</h5>
+                          <h5 className='statsTittle'>Racha actual</h5>
                         </div>
                         <div className='col-md-6'>
-                          <h5 className='stat'>2</h5>
+                          <h5 className='stat'>{this.props.currentUser.profile.currentStreak}</h5>
                         </div>
                       </div>
                   </div>
