@@ -8,6 +8,7 @@ import '../style/App.css';
 
 import football from '../api/football-data.js';
 
+// You should mantain these configuration values in a settings.json file
 const URL="https://footscores.herokuapp.com";
 
 

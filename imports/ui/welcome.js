@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import '../style/App.css';
 
+/**
+   Note: Links should point to actual page options
+**/
 class Welcome extends Component {
 
     /*  constructor(props)
@@ -32,7 +35,7 @@ class Welcome extends Component {
                       <li>Liga Santander</li>
                       <li>Bundesliga</li>
                       <li>Serie A</li>
-                      <li>.. y muchas más!</li>   
+                      <li>.. y muchas más!</li>
                     </ul>
                   </div>
                   <div className='col-md-3'></div>

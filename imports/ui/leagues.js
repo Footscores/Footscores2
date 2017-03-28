@@ -3,6 +3,10 @@ import React, {Component} from 'react';
 import '../style/App.css';
 import Partido from './partido.js';
 
+/**
+  It is a good idea to display league logos inside round badges,
+  do not forget to change the alt labels.
+**/
 export default class Leagues extends Component {
 
   constructor(props) {

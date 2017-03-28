@@ -1,0 +1,2 @@
+# General comments
+This is a great project and it is well implemented. However, you must take account of some security details, such as storing API keys in publicly available setting files. Among other details, you can extend the current user information to show/hide some options defined on the navbar, finally, do not forget to include more information at the homepage and the landing page after an user has logged in.

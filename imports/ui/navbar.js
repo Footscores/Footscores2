@@ -4,6 +4,9 @@ import {LinkContainer} from 'react-router-bootstrap';
 import AccountsWrapper from './accountsWrapper.jsx';
 import '../style/App.css';
 
+/**
+  App options should be hidden if the current user is undefined.
+**/
 class Navegacion extends Component {
     render() {
         return (
