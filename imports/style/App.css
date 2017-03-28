@@ -56,6 +56,10 @@ html, body. div{
 {
     margin: 2em 0;
 }
+.content-divider-profile
+{
+    margin: 0.5em 0;
+}
 #welcome-list
 {
   text-align: center;
@@ -166,4 +170,41 @@ input
   border-radius: 50%;
   background-size: 100% auto;
   box-shadow: 0 1em 3em rgba(0,0,0,0.60);
+}
+
+#profilePic
+{
+  height: 15em;
+  width: 100%;
+}
+.boxProfile{
+    border-radius: 1em;
+    box-shadow: 1em 1em 2em 0em rgba(0, 0, 0, 0.16), 0em 2em 4em 0em rgba(0, 0, 0, 0.12);
+    padding: 1em 2em;
+    display: block;
+    margin-top: 3em;
+    border: 0.1em solid rgba(0, 0, 0, 0.1);
+}
+.boxProfile h4{
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+}
+#profileName{
+  margin-top: 1em;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+}
+.statsTittle
+{
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+}
+.stat
+{
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+}
+#header-historial
+{
+  text-align: center;
 }

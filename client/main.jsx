@@ -10,6 +10,7 @@ import Home from '../imports/ui/home.js';
 import Leaderboard from '../imports/ui/leaderboard.js';
 import Leagues from '../imports/ui/leagues.js';
 import Welcome from '../imports/ui/welcome.js';
+import Profile from '../imports/ui/profile.js';
 
 Meteor.startup(() => {
   render(<Router history={browserHistory}>
@@ -18,6 +19,7 @@ Meteor.startup(() => {
       <Route path='leaderboard' component={Leaderboard}/>
       <Route path='home' component={Home}/>
       <Route path='leagues' component={Leagues}/>
+      <Route path='profile' component={Profile}/>
     </Route>
   </Router>, document.getElementById('render-target'));
 });
