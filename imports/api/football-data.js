@@ -19,8 +19,8 @@ module.exports.getCompetitionName = getCompetitionName;
 ***************************************************************/
 
 // Get all the matches happening in the upcoming week, all competitions
-module.exports.getMatchesNextWeek = function(callback) {
-  let url = config.hostname + '/fixtures?timeFrame=n7&league=' + competitions.join(',');
+module.exports.getMatchesNextWeek = function(league,callback) {
+  let url = config.hostname + '/fixtures?timeFrame=n7&league=' + league;
   if(callback){
     HTTP.call('GET', url, config.options, callback);
   } else {
