@@ -1,3 +1,4 @@
+//Chévere la definición de esquemas para las colecciones
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
