@@ -24,7 +24,7 @@ class Navegacion extends Component {
                             <NavItem eventKey={2}>Ligas</NavItem>
                           </LinkContainer>
                           <LinkContainer to="/leaderboard">
-                            <NavItem eventKey={3} onClick={this.props.onClickLeaderboard}>Leaderboard</NavItem>
+                            <NavItem eventKey={3}>Leaderboard</NavItem>
                           </LinkContainer>
                           <LinkContainer to="/profile">
                               <NavItem eventKey={4}>Perfil</NavItem>

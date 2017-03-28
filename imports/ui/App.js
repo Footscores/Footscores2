@@ -14,37 +14,14 @@ const URL="https://footscores.herokuapp.com";
 class App extends Component {
 
   constructor(props) {
-    axios.get(URL+"/users/leaderboard").then(response => {
-      this.setState({
-        usuarios: response.data
-      });
-    });
     super(props);
-    this.state= {
-      usuarios:[],
-      signupModalOpen: false,
-      loginModelOpen: false,
-      token: '',
-      thereIsToken: true
-    };
-  };
-
-  getUsersLeaderboard() {
-    axios.get(URL+"/users/leaderboard").then(response => {
-      this.setState({
-        usuarios: response.data
-      });
-    });
   };
 
   render() {
     return (
       <div>
         <div className='row'>
-          <Navegacion
-            onClickLeaderboard={this.getUsersLeaderboard.bind(this)}
-          >
-          </Navegacion>
+          <Navegacion/>
         </div>
         <div className='row'>
           <div className='col-md-1'>
