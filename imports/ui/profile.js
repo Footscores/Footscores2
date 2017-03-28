@@ -14,7 +14,8 @@ class Profile extends Component {
       super(props)
       this.state = {
         hayIntentos:true,
-        intentos:[{id:1,team:'hola'}]
+        intentos:[{}],
+        showConfig:false
 
       }
     }
@@ -40,14 +41,68 @@ class Profile extends Component {
 
     }
 
+    configClick()
+    {
+      this.setState(
+        {
+          showConfig:true
+        });
+    }
+    backClick()
+    {
+      this.setState(
+        {
+          showConfig:false
+        });
+    }
+
     render() {
       const estaLleno = this.state.hayIntentos;
+      const config = this.state.showConfig;
         return (
             <div>
               <div className='row' id="profileBackPic">
                 <div className='col-md-4'>
                   <div className="boxProfile">
-                      <img alt='Imagen de Perfil' src={this.props.currentUser.profile.picture} id='profilePic' className='img-responsive'></img>
+                    {config
+                      ?
+                      <div>
+                        <div className='row'>
+                          <button type="button" className="btn btn-default" aria-label="Configuracion" onClick={this.backClick.bind(this)}>
+                            <span className="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                          </button>
+                        </div>
+                        <div className='row'>
+                          <h3>Tus Datos</h3>
+                        </div>
+                        <div className='row'>
+                          <div className="form-group">
+                            <label>Nombre:</label>
+                            <input type="text" className="form-control"></input>
+                          </div>
+                          <div className="form-group">
+                            <label>Foto:</label>
+                            <input type="text" className="form-control"></input>
+                          </div>
+                          <div className="form-group">
+                            <label>Equipo Favorito:</label>
+                            <input type="text" className="form-control"></input>
+                          </div>
+                        </div>
+
+
+                      </div>
+                      :
+                      <div>
+                      <div className='row'>
+                        <button type="button" className="btn btn-default" aria-label="Configuracion" onClick={this.configClick.bind(this)}>
+                          <span className="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <div className='row'>
+                        <img alt='Imagen de Perfil' src={this.props.currentUser.profile.picture} id='profilePic' className='img-responsive'></img>
+                      </div>
+
                       <div className='row'>
                         {
                           this.props.currentUser.profile.name?<h2>{this.props.currentUser.profile.name}</h2>:<h2>Sin nombre</h2>
@@ -79,7 +134,7 @@ class Profile extends Component {
                         <div className='col-md-6'>
                           <h5 className='stat'>{this.props.currentUser.profile.currentStreak}</h5>
                         </div>
-                      </div>
+                      </div> </div>}
                   </div>
                 </div>
                 <div className='col-md-8'>
