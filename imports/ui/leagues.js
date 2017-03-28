@@ -18,15 +18,17 @@ class Leagues extends Component {
       }
     }
 
+
     getFixturesLeague(LeagueCode) {
       this.setState({
         cargando:true
       });
-      axios.get(URL+"/fixtures/"+LeagueCode).then(response => {
-        if(response.data.length>0) {
+      football.getMatchesNextWeek(LeagueCode,function(err,resp)
+      {
+        if(resp.data.fixtures.length>0) {
           this.setState({
             lleno: true,
-            liga: response.data,
+            liga: resp.data.fixtures,
             cargando:false
           });
         }
@@ -37,7 +39,7 @@ class Leagues extends Component {
             cargando:false
           });
         }
-      });
+      }.bind(this));
     }
 
     render() {
