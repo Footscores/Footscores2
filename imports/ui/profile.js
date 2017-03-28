@@ -4,6 +4,8 @@ import { createContainer } from 'meteor/react-meteor-data';
 import '../style/App.css';
 import Intento from './intento';
 
+import  Guesses  from '../api/collections/guesses.js';
+
 
 class Profile extends Component {
 
@@ -66,11 +68,9 @@ class Profile extends Component {
         );
     }
 }
-
 export default createContainer(() => {
+  console.log('hola');
   return {
-
-        intentos:[{team:'hola'}]
-
+    intentos: Guesses.find({}).fetch(),
   };
 }, Profile);

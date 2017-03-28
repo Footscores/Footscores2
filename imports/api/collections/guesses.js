@@ -37,7 +37,7 @@ Schemas.Guess = new SimpleSchema({
   },
   correct: {
     type: Boolean,
-    label: "Indicates whether the guess was correct or not";
+    label: "Indicates whether the guess was correct or not",
     optional: true
   }
 });
