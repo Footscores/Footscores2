@@ -24,7 +24,7 @@ module.exports.getMatchesNextWeek = function(callback) {
   if(callback){
     HTTP.call('GET', url, config.options, callback);
   } else {
-    return HTTP.call('GET', url, config.options).data;
+    return HTTP.call('GET', url, config.options).data.fixtures;
   }
 };
 
@@ -42,7 +42,6 @@ module.exports.getMatchesByCompetition = function(id, callback) {
 module.exports.getMatchesDayBefore = function(callback) {
   let url = config.hostname + '/fixtures?timeFrame=p1&league=' + competitions.join(',');
   if(callback){
-    console.log(url);
     HTTP.call('GET', url, config.options, callback);
   } else {
     return HTTP.call('GET', url, config.options).data;

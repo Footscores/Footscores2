@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {Component} from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import '../style/App.css';
-import Partido from './partido';
+import Partido from './partido.js';
 import football from './../api/football-data.js';
 
 const URL = "https://footscores.herokuapp.com";
@@ -130,9 +130,11 @@ class Leagues extends Component {
 }
 
 export default createContainer(() => {
+  Meteor.call('api.nextWeek', {}, (err, response) => {
+    console.log(err);
+    console.log(response);
+  });
   return {
-    fixtures: football.getMatchesDayBefore((err, response) => {
-      return response.data;
-    }),
-  };
+    fixtures: [],
+  }
 }, Leagues);
