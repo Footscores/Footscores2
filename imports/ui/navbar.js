@@ -4,6 +4,8 @@ import {LinkContainer} from 'react-router-bootstrap';
 import AccountsWrapper from './accountsWrapper.jsx';
 import '../style/App.css';
 
+//Los botones de la navbar no deberían poder clickearse si no se está loggeado, pues cambia de página (ruta)
+//pero no pasa nada, algo inesperado.
 class Navegacion extends Component {
     render() {
         return (

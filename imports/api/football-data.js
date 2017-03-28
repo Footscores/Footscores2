@@ -1,6 +1,8 @@
 import { HTTP } from 'meteor/http';
 import config from '../startup/football-data-config.js';
 
+//Muy chevere que comenten el código!
+
 /***************************************************************
  API METADATA
 ***************************************************************/

@@ -212,7 +212,7 @@ input
 {
   background: rgb(4, 188, 0) !important;
 }
-
+/*El important no debería usarse con tanta frecuencia*/
 #login-buttons a{
     background-color: none !important;
     color: rgb(4, 188, 0) !important;
