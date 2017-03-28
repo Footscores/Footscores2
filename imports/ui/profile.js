@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import '../style/App.css';
 import Intento from './intento';
@@ -48,7 +49,7 @@ class Profile extends Component {
                   <div className="boxProfile">
                       <img alt='Imagen de Perfil' src='img/avatar.jpg' id='profilePic' className='img-responsive'></img>
                       <div className='row'>
-                        <h4 id='profileName'>Felipe Martinez</h4>
+                        <h4 id='profileName'>{this.props.currentUser.username}</h4>
                       </div>
                       <hr className="content-divider-profile"></hr>
                       <h4>Estadísticas:</h4>
@@ -86,9 +87,13 @@ class Profile extends Component {
         );
     }
 }
+Profile.propTypes = {
+  currentUser: PropTypes.object,
+};
+
 export default createContainer(() => {
-  console.log( Guesses.find({}).fetch());
   return {
     intentos: Guesses.find({}).fetch(),
+    currentUser: Meteor.user(),
   };
 }, Profile);
