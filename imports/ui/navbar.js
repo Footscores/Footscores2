@@ -6,9 +6,11 @@ import '../style/App.css';
 
 class Navegacion extends Component {
     render() {
-        return (
-            <div>
-                <Navbar className="navbar-inverse">
+        var navbar;
+        var isLoggedIn = Meteor.user();
+        if (logueado !==null){
+            navbar = (
+                    <Navbar className="navbar-inverse">
                     <Navbar.Header>
                         <Navbar.Brand>
                             FootScores
@@ -34,12 +36,43 @@ class Navegacion extends Component {
                           </LinkContainer>
                         </Nav>
                         <Nav pullRight>
-                          {/* Ir al perfil si está conectado */}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+                );
+        }
+        else{
+            bar = (
+                <Navbar className="navbar-inverse">
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            FootScores
+                        </Navbar.Brand>
+                        <Navbar.Toggle/>
+                    </Navbar.Header>
+                    <Navbar.Collapse>
+                        <Nav>
+                          <LinkContainer to="/">
+                            <AccountsWrapper />
+                          </LinkContainer>
+                        </Nav>
+                        <Nav pullRight>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            );
+        }
+        return (
+            <div>
+            {navbar}
             </div>
         );
     }
 }
-export default Navegacion;
+/*Margarita: Deberían hacer que la Navbar no muestre los NavItems si el usuario no ha iniciado sesión usando createContainer
+    Creo que debería funcionar con los cambios que hice :) */
+export default createContainer(() =>{
+	return{
+		currentUser: Meteor.user()
+	};
+}, Navegacion);
