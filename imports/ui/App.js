@@ -1,5 +1,7 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
 import Modal from 'react-modal';
 import Signup from './signup';
 import Login from './login';
@@ -185,7 +187,7 @@ class App extends Component {
         <div className='row'>
           <div className='col-md-1'>
           </div>
-          {this.state.thereIsToken ?
+          {this.props.currentUser ?
             (
               <div className='col-md-10'>
                 {React.cloneElement(this.props.children, {...this.state})}
@@ -211,5 +213,12 @@ class App extends Component {
     );
   }
 }
+App.propTypes = {
+  currentUser: PropTypes.object,
+};
 
-export default App;
+export default createContainer(() => {
+  return {
+    currentUser: Meteor.user(),
+  };
+}, App);
