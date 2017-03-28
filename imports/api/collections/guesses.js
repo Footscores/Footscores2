@@ -6,6 +6,12 @@ const Guesses = new Mongo.Collection('guesses');
 var Schemas = {};
 
 Schemas.Guess = new SimpleSchema({
+  user: {
+    type: SimpleSchema.Integer,
+    label: "Owner of this guess",
+    min: 0,
+    optional: false
+  },
   date: {
     type: Date,
     label: "Date the match is taking place",
@@ -43,4 +49,23 @@ Schemas.Guess = new SimpleSchema({
 });
 
 Guesses.attachSchema(Schemas.Guess);
+
+Meteor.methods({
+  'guesses.insert'({date, homeTeam, awayTeam, homeTeamScore, awayTeamScore}){
+    if (!Meteor.userId()) {
+      throw new Meteor.Error('not-authorized');
+    }
+    Guesses.insert({
+      user: Meteor.userId(),
+      date,
+      homeTeam,
+      awayTeam,
+      homeTeamScore,
+      awayTeamScore
+    });
+  },
+  'guesses.update'({id, correct}) {
+    Guesses.update(id, {$set : {correct: correct} });
+  }
+});
 export default Guesses;
