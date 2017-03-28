@@ -18,6 +18,27 @@ class Profile extends Component {
       }
     }
 
+    renderIntentos() {
+      let intentos = this.props.intentos;
+      if(intentos.length !=0)
+      {
+        return intentos.map((intento)=>
+        {
+          return (
+            <Intento
+              key={intento._id}
+              intento={intento}
+            />
+          );
+        });
+      }
+      else
+      {
+        return(<h3>No hay intentos</h3>);
+      }
+
+    }
+
     render() {
       const estaLleno = this.state.hayIntentos;
         return (
@@ -56,10 +77,7 @@ class Profile extends Component {
                     </div>
                   </div>
                   <div className='row'>
-                    {estaLleno ? (this.state.intentos.map(intento =>{
-                      return <Intento key={intento.id} intento={intento} />
-                    }) )
-                    : (<h3>No se han realizado intentos todavia</h3>)}
+                    {this.renderIntentos()}
                   </div>
                 </div>
 
@@ -69,7 +87,7 @@ class Profile extends Component {
     }
 }
 export default createContainer(() => {
-  console.log('hola');
+  console.log( Guesses.find({}).fetch());
   return {
     intentos: Guesses.find({}).fetch(),
   };
