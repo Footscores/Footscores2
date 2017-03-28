@@ -9,7 +9,6 @@ class Leaderboard extends Component {
   };
 
   render() {
-    console.log(this.props.users);
     var i = 0;
     return (
       <div>
