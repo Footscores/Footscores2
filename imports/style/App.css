@@ -222,3 +222,7 @@ input
     display: inline-block !important;
     font-family: 'Montserrat', sans-serif !important;
 }
+
+.navbar-inverse {
+  border-radius: 0px !important;
+}
