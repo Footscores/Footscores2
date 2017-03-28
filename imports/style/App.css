@@ -208,3 +208,17 @@ input
 {
   text-align: center;
 }
+.login-button
+{
+  background: rgb(4, 188, 0) !important;
+}
+
+#login-buttons a{
+    background-color: none !important;
+    color: rgb(4, 188, 0) !important;
+    padding: 14px 25px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
