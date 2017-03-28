@@ -3,8 +3,6 @@ import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import Modal from 'react-modal';
-import Signup from './signup';
-import Login from './login';
 import Navegacion from './navbar';
 import '../style/App.css';
 
