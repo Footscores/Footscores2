@@ -55,6 +55,14 @@ class Profile extends Component {
                       <h4>Estadísticas:</h4>
                       <div className='row'>
                         <div className='col-md-6'>
+                          <h5 className='statsTittle'><strong>Puntaje</strong></h5>
+                        </div>
+                        <div className='col-md-6'>
+                          <h5 className='stat'><strong>100</strong></h5>
+                        </div>
+                      </div>
+                      <div className='row'>
+                        <div className='col-md-6'>
                           <h5 className='statsTittle'>Mejor Racha</h5>
                         </div>
                         <div className='col-md-6'>
@@ -93,7 +101,7 @@ Profile.propTypes = {
 
 export default createContainer(() => {
   return {
-    intentos: Guesses.find({}).fetch(),
     currentUser: Meteor.user(),
+    intentos: Guesses.find({user: Meteor.userId()}).fetch()
   };
 }, Profile);
