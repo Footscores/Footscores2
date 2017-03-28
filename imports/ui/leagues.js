@@ -56,6 +56,7 @@ export default class Leagues extends Component {
           <div className='col-md-12'>
             <div className='row'>
               <div className='col-md-2'>
+      //Esto se podría hacer menos engorroso usando una función que reciba como parámetro la liga escogida.
                 <img onClick={() => this.getFixturesLeague('CL')} alt='logo de la liga' className="img-league img-circle img-responsive"
                   src="img/leagues/uefa.jpg"></img>
                 </div>
