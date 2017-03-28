@@ -7,6 +7,9 @@ Meteor.methods({
   'api.nextWeek'({}){
     return football.getMatchesNextWeek();
   },
+  'api.nextWeekCompetition'({id}){
+    return football.getMatchesByCompetition(id);
+  },
   'api.dayBefore'({}){
     return football.getMatchesDayBefore();
   }

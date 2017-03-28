@@ -1,13 +1,9 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
 import '../style/App.css';
 import Partido from './partido.js';
-import football from './../api/football-data.js';
 
-const URL = "https://footscores.herokuapp.com";
-
-class Leagues extends Component {
+export default class Leagues extends Component {
 
     constructor(props) {
       super(props)
@@ -18,17 +14,15 @@ class Leagues extends Component {
       }
     }
 
-
-    getFixturesLeague(LeagueCode) {
+    getFixturesLeague(leagueCode) {
       this.setState({
         cargando:true
       });
-      football.getMatchesNextWeek(LeagueCode,function(err,resp)
-      {
-        if(resp.data.fixtures.length>0) {
+      Meteor.call('api.nextWeekCompetition', {id: leagueCode}, (err, fixtures) => {
+        if(fixtures.length>0) {
           this.setState({
             lleno: true,
-            liga: resp.data.fixtures,
+            liga: fixtures,
             cargando:false
           });
         }
@@ -39,7 +33,7 @@ class Leagues extends Component {
             cargando:false
           });
         }
-      }.bind(this));
+      });
     }
 
     render() {
@@ -130,13 +124,3 @@ class Leagues extends Component {
         );
     }
 }
-
-export default createContainer(() => {
-  Meteor.call('api.nextWeek', {}, (err, response) => {
-    console.log(err);
-    console.log(response);
-  });
-  return {
-    fixtures: [],
-  }
-}, Leagues);
