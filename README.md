@@ -20,7 +20,7 @@ We are both systems and computing engineering students at Uniandes, currently co
 This application requires having node.js, npm and meteor installed.
 After cloning the project, you should `cd` into it and run the following commands
 ```
-meteor npm installed
+meteor npm install
 meteor
 ```
 Once the project starts running, you will be able to see it in `localhost:3000`.
