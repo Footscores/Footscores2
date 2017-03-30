@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import '../style/App.css';
 
+/**
+    Notes: This menu should contain the instructions and
+    point to the app options. Currently this landing page
+    does not give insights of what to do next.
+
+    Do not forget to do a general code clean-up: Remove
+    commented blocks.
+**/
 class Home extends Component {
 
     /*  constructor(props)

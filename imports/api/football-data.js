@@ -1,10 +1,13 @@
 import { HTTP } from 'meteor/http';
 import config from '../startup/football-data-config.js';
 
+// +1: Method documentation and API entrypoints
+
 /***************************************************************
  API METADATA
 ***************************************************************/
 
+// Note: This should be defined inside a collection
 var competitions = ['WC', 'EC', 'CL', 'EL', 'PPL', 'DED', 'FL1', 'CDR', 'PD', 'SA', 'FAC', 'PL', 'DFB', 'BL1'];
 var competitionsNames = ['World Cup', 'European Cup of Nations', 'Champions League', 'Europa League', 'UEFA Cup', 'Primeira Liga', 'Eredivise', 'Ligue 1', 'Copa del Rey', 'Primera División (Liga BBVA)', 'Serie A', 'FA Cup', 'English Premiere League', 'DFB Pokal', 'Bundesliga 1'];
 var getCompetitionName = function(id) {
