@@ -231,3 +231,7 @@ input
   margin-top: 0.1em;
   box-shadow: 0 1px 3px rgba(0,0,0,0.30);
 }
+
+.navbar-inverse {
+  border-radius: 0px !important;
+}
