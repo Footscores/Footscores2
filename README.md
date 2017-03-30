@@ -5,7 +5,7 @@ Available [here](http://footscores2.herokuapp.com/).
 ### Version 2.0
 We have switched to Meteor! Our application was rebuilt using the Meteor framework, allowing us to bring you new features:
  - Profile page where you can see you current and previous guesses
- - Better login and
+ - Better login
  - Improved calls to the football-data API
  - New design + accesibility!
 

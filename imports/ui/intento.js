@@ -11,6 +11,7 @@ class Intento extends Component {
         return (
             <div className='row'>
                 <div className='col-md-12'>
+
                     <div className='row'>
                         <table className='table-matches'>
                             <tbody>
@@ -19,9 +20,8 @@ class Intento extends Component {
                                     <td className='col-md-4 col-xs-6 matches'>
                                         <div className='row'>
                                             <span className='col-md-4 col-xs-0'></span>
-                                            <div className='col-md-4'>
-                                                <span className='user-guess'>{this.props.intento.homeTeamScore}-{this.props.intento.awayTeamScore}</span>
-
+                                            <div className='col-md-4 result-guess'>
+                                                <span className=''>{this.props.intento.homeTeamScore}-{this.props.intento.awayTeamScore}</span>
                                             </div>
                                             <span className='col-md-4 col-xs-0'></span>
                                         </div>
