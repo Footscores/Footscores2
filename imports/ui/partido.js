@@ -77,6 +77,9 @@ class Partido extends Component {
                       )
                       : (<form>
                         <div className='row'>
+                          {
+                            /*Estos inputs deberían tener aria label para ser  más accesibles*/
+                          }
                           <input className='col-md-2 col-xs-6' type="number" name="homeGoals" onChange={this.setHomeGoals.bind(this)}></input>
                           <input className='col-md-2 col-xs-6' type="number" name="awayGoals" onChange={this.setAwayGoals.bind(this)}></input>
                         </div>

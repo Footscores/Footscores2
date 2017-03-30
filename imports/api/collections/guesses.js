@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
+//Me parece muy chevere que se tomen el trabajo de hacer un esquema! Muy ordenado
 const Guesses = new Mongo.Collection('guesses');
 
 var Schemas = {};

@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
-
+//Muy buen esquema
 const Users = new Mongo.Collection('users');
 
 var Schemas = {};
