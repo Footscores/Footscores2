@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div>
         <div className='row'>
-          <Navegacion/>
+          <Navegacion user= {this.props.currentUser}/>
         </div>
         <div className='row'>
           <div className='col-md-1'>

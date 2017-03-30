@@ -222,3 +222,12 @@ input
     display: inline-block !important;
     font-family: 'Montserrat', sans-serif !important;
 }
+.result-guess
+{
+  width:10em;
+  background-color: rgb(4, 188, 0);
+  color: #fff;
+  border: none;
+  margin-top: 0.1em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.30);
+}
