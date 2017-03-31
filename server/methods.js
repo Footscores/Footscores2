@@ -47,5 +47,11 @@ Meteor.methods({
         }
       }
     }
+  },
+  'users.udpateInfo'({user, name, picture}) {
+    if(picture)
+      Meteor.users.update(user, { $set: {"profile.name": name, "profile.picture": picture} });
+    else
+      Meteor.users.update(user, { $set: {"profile.name": name} });
   }
 });
