@@ -1,9 +1,12 @@
-import axios from 'axios';
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
 import '../style/App.css';
 import Partido from './partido.js';
 
-export default class Leagues extends Component {
+import  Guesses  from '../api/collections/guesses.js';
+
+class Leagues extends Component {
 
   constructor(props) {
     super(props)
@@ -22,7 +25,9 @@ export default class Leagues extends Component {
       if(fixtures.length>0) {
         this.setState({
           lleno: true,
-          liga: fixtures,
+          liga: fixtures.filter((fixture) => {
+            return isAvailable(fixture, this.props.guesses);
+          }),
           cargando:false
         });
       }
@@ -35,7 +40,6 @@ export default class Leagues extends Component {
       }
     });
   }
-
 
   render() {
     const estaLleno = this.state.lleno;
@@ -79,51 +83,83 @@ export default class Leagues extends Component {
                         <div className='col-md-2'>
                           <img role='button' tabIndex='0' aria-label='Boton para acceder a la liga santander' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('PD')} onClick={() => this.getFixturesLeague('PD')} alt='logo de la liga Santander' className="img-league img-circle img-responsive"
                             src="img/leagues/ligaSantander.jpg"></img>
-                          </div>
                         </div>
-                        <div className='row'>
-                          <div className='col-md-2'>
-                            <img role='button' tabIndex='0' aria-label='Boton para acceder a la ligue 1' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('FL1')} onClick={() => this.getFixturesLeague('FL1')} alt='logo de la Ligue 1' className="img-league img-circle img-responsive"
+                      </div>
+                      <div className='row'>
+                        <div className='col-md-2'>
+                          <img role='button' tabIndex='0' aria-label='Boton para acceder a la ligue 1' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('FL1')} onClick={() => this.getFixturesLeague('FL1')} alt='logo de la Ligue 1' className="img-league img-circle img-responsive"
                               src="img/leagues/ligue1.jpg"></img>
+                          </div>
+                          <div className='col-md-2'>
+                            <img role='button' tabIndex='0' aria-label='Boton para acceder a la liga pokal' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('DFB')} onClick={() => this.getFixturesLeague('DFB')} alt='logo de la pokal liga' className="img-league img-circle img-responsive"
+                                src="img/leagues/pokal.jpg"></img>
                             </div>
                             <div className='col-md-2'>
-                              <img role='button' tabIndex='0' aria-label='Boton para acceder a la liga pokal' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('DFB')} onClick={() => this.getFixturesLeague('DFB')} alt='logo de la pokal liga' className="img-league img-circle img-responsive"
-                                src="img/leagues/pokal.jpg"></img>
-                              </div>
-                              <div className='col-md-2'>
-                                <img role='button' tabIndex='0' aria-label='Boton para acceder a la premier lig' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('PL')} onClick={() => this.getFixturesLeague('PL')} alt='logo de la premier league' className="img-league img-circle img-responsive"
+                              <img role='button' tabIndex='0' aria-label='Boton para acceder a la premier lig' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('PL')} onClick={() => this.getFixturesLeague('PL')} alt='logo de la premier league' className="img-league img-circle img-responsive"
                                   src="img/leagues/premier.jpg"></img>
-                                </div>
-                                <div className='col-md-2'>
-                                  <img role='button' tabIndex='0' aria-label='Boton para acceder a la primeira liga' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('PPL')} onClick={() => this.getFixturesLeague('PPL')} alt='logo de la primeira liga' className="img-league img-circle img-responsive"
+                            </div>
+                            <div className='col-md-2'>
+                              <img role='button' tabIndex='0' aria-label='Boton para acceder a la primeira liga' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('PPL')} onClick={() => this.getFixturesLeague('PPL')} alt='logo de la primeira liga' className="img-league img-circle img-responsive"
                                     src="img/leagues/primeiraLiga.jpg"></img>
-                                  </div>
-                                  <div className='col-md-2'>
-                                    <img role='button' tabIndex='0' aria-label='Boton para acceder a la serie a italiana' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('SA')} onClick={() => this.getFixturesLeague('SA')} alt='logo de la serie A italiana' className="img-league img-circle img-responsive"
+                            </div>
+                            <div className='col-md-2'>
+                              <img role='button' tabIndex='0' aria-label='Boton para acceder a la serie a italiana' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('SA')} onClick={() => this.getFixturesLeague('SA')} alt='logo de la serie A italiana' className="img-league img-circle img-responsive"
                                       src="img/leagues/serieA.jpg"></img>
-                                    </div>
-                                    <div className='col-md-2'>
-                                      <img role='button' tabIndex='0' aria-label='Boton para acceder a la copa uefa' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('EL')} onClick={() => this.getFixturesLeague('EL')} alt='logo de la uefa cup' className="img-league img-circle img-responsive"
+                            </div>
+                            <div className='col-md-2'>
+                              <img role='button' tabIndex='0' aria-label='Boton para acceder a la copa uefa' onKeyPress={(event) => (event.charCode == '13') && this.getFixturesLeague('EL')} onClick={() => this.getFixturesLeague('EL')} alt='logo de la uefa cup' className="img-league img-circle img-responsive"
                                         src="img/leagues/uefacup.jpg"></img>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <hr className="content-divider"></hr>
-                                <div className='row'>
-                                  {cargo ?
-                                    (<div className="col-md-12">
-                                      <div className='loader'></div>
-                                    </div>):(
-                                      <div></div>
-                                    )}</div>
-                                    <div className='row'>
-                                      {estaLleno ? (this.state.liga.map(partido =>{
-                                        return <Partido key={partido.id} partido={partido} />
-                                      }) )
-                                      : (<h3>No hay partidos disponibles para esta liga, selecciona otra!</h3>)}
-                                    </div>
-                                  </div>
-                                );
-                              }
-                            }
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+        <hr className="content-divider"></hr>
+        <div className='row'>
+        {
+          cargo ? (
+            <div className="col-md-12">
+              <div className='loader'>
+              </div>
+            </div>
+          ):(
+            <div></div>
+          )}
+        </div>
+        <div className='row'>
+        {
+          estaLleno ? (
+            this.state.liga.map(partido => {
+              return <Partido key={partido.id} partido={partido} />
+            })
+          ):(
+            <h3>No hay partidos disponibles para esta liga, selecciona otra!</h3>
+        )}
+        </div>
+      </div>
+    );
+  }
+}
+
+function isAvailable(fixture, guesses) {
+  let available = true;
+  for(var i=0; i<guesses.length && available; i++) {
+    var homeTeam = fixture.homeTeamName === guesses[i].homeTeam;
+    var awayTeam = fixture.awayTeamName === guesses[i].awayTeam;
+    var unchecked = guesses[i].correct === null || guesses[i].correct === undefined;
+    if(homeTeam && awayTeam && unchecked) {
+      available = false;
+    }
+  }
+  return available;
+}
+
+Leagues.propTypes = {
+  currentUser: PropTypes.object,
+};
+
+export default createContainer(() => {
+  return {
+    currentUser: Meteor.user(),
+    guesses: Guesses.find({user: Meteor.userId()}).fetch()
+  };
+}, Leagues);
