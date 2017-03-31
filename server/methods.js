@@ -31,8 +31,9 @@ Meteor.methods({
   'guesses.update'({id, correct}) {
     Guesses.update(id, {$set : {correct: correct} });
   },
-  'guesses.check'({user, results}) {
-    var pending = Guesses.find({user}).fetch().filter((guess) => {return guess.correct == null || guess.correct == undefined});
+  'guesses.check'({user}) {
+    var results = football.getMatchesDayBefore();
+    var pending = Guesses.find({user: user}).fetch();
     for(var i=0; i<pending.length; i++) {
       var guess = pending[i];
       for (var j = 0; j<results.length; j++) {
@@ -41,6 +42,8 @@ Meteor.methods({
           Guesses.update(pending[i]._id, {$set: {correct: isCorrect}});
           if(isCorrect)
             Meteor.users.udpate(user, { $inc:{score: 10, currentStreak: 1} });
+          else
+            Meteor.users.udpate(user, { $set: {currentStreak: 0} });
         }
       }
     }
