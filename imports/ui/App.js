@@ -6,10 +6,6 @@ import Modal from 'react-modal';
 import Navegacion from './navbar';
 import '../style/App.css';
 
-import football from '../api/football-data.js';
-
-const URL="https://footscores.herokuapp.com";
-
 
 class App extends Component {
 
