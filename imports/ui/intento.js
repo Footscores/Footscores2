@@ -7,6 +7,25 @@ class Intento extends Component {
     constructor(props) {
         super(props);
     }
+
+    renderResult()
+    {
+      if(this.props.correct !== undefined)
+      {
+          if(this.props.correct === true)
+          {
+            return(<i className="fa fa-check-circle-o fa-lg" aria-hidden="true"></i>);
+          }
+          else
+          {
+            return(<i className="fa fa-times-circle fa-lg" aria-hidden="true"></i>);
+          }
+      }
+      else
+      {
+        return(<i className="fa fa-clock-o fa-lg" aria-hidden="true"></i>);
+      }
+    }
     render() {
         return (
             <div className='row'>
@@ -19,11 +38,16 @@ class Intento extends Component {
                                     <td className='col-md-4 col-xs-3 matches'>{this.props.intento.homeTeam}</td>
                                     <td className='col-md-4 col-xs-6 matches'>
                                         <div className='row'>
-                                            <span className='col-md-4 col-xs-0'></span>
-                                            <div className='col-md-4 result-guess'>
-                                                <span className=''>{this.props.intento.homeTeamScore}-{this.props.intento.awayTeamScore}</span>
+                                          <div className='col-md-3 col-xs-0'></div>
+                                            <div className='col-md-6'>
+                                                <div className='row result-guess'>
+                                                  <span >{this.props.intento.homeTeamScore}-{this.props.intento.awayTeamScore}</span>
+                                                </div>
+                                                <div className='row'>
+                                                  {this.renderResult()}
+                                                </div>
                                             </div>
-                                            <span className='col-md-4 col-xs-0'></span>
+                                            <div className='col-md-3 col-xs-0'></div>
                                         </div>
                                     </td>
                                     <td className='col-md-4 col-xs-3 matches'>{this.props.intento.awayTeam}</td>

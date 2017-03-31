@@ -101,7 +101,7 @@ class Profile extends Component {
                     {
                       this.props.currentUser.profile.name?<h2>{this.props.currentUser.profile.name}</h2>:<h2>Sin nombre</h2>
                     }
-                    <button type='button' className='guessButton pull-right' onClick={this.checkGuesses.bind(this)}>
+                    <button type='button' className='guessButton pull-right' aria-label='Refrescar intentos' onClick={this.checkGuesses.bind(this)}>
                       <span className="glyphicon glyphicon-refresh" aria-hidden="true"></span>
                     </button>
                     <h4 id='profileName'>{this.props.currentUser.username}</h4>

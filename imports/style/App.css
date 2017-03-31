@@ -242,7 +242,7 @@ input
 }
 .result-guess
 {
-  width:10em;
+  width:100%;
   background-color: rgb(4, 188, 0);
   color: #fff;
   border: none;
@@ -252,4 +252,15 @@ input
 
 .navbar-inverse {
   border-radius: 0px !important;
+}
+.fa-check-circle-o {
+  color: rgb(4, 188, 0);
+}
+.fa-times-circle
+{
+  color: #cc0505;;
+}
+.fa-clock-o
+{
+  color:rgba(0, 0, 0, 0.70);
 }
