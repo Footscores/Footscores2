@@ -32,4 +32,4 @@ Once the project starts running, you will be able to see it in `localhost:3000`.
 
 ![FootScores2 Leaderboard demo](http://i.imgur.com/dkngktE.png)
 
-Our video demonstration is still in progress..
+Video demonstration can be found here: https://www.youtube.com/watch?v=O4_Kd4E50lY&feature=youtu.be
