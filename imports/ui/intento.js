@@ -10,9 +10,9 @@ class Intento extends Component {
 
     renderResult()
     {
-      if(this.props.correct !== undefined)
+      if(this.props.intento.correct !== undefined)
       {
-          if(this.props.correct === true)
+          if(this.props.intento.correct === true)
           {
             return(<i className="fa fa-check-circle-o fa-lg" aria-hidden="true"></i>);
           }
