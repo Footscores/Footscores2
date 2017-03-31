@@ -40,7 +40,7 @@ module.exports.getMatchesByCompetition = function(id, callback) {
 
 // Get all the matches that took place the previous day
 module.exports.getMatchesDayBefore = function(callback) {
-  let url = config.hostname + '/fixtures?timeFrame=p1&league=' + competitions.join(',');
+  let url = config.hostname + '/fixtures?timeFrame=p17&league=' + competitions.join(',');
   if(callback){
     HTTP.call('GET', url, config.options, callback);
   } else {
