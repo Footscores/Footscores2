@@ -50,11 +50,18 @@ class Profile extends Component {
 
   checkGuesses() {
     Meteor.call('guesses.check', {user: this.props.currentUser._id});
+    console.log('aqui deberia cambiar');
+    this.setState(
+      {
+        intentos:this.props.intentos
+      });
   }
 
 
 
   render() {
+    console.log('hola');
+    console.log(this.state.intentos);
     const estaLleno = this.state.hayIntentos;
     const config = this.state.showConfig;
     return (
