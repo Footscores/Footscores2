@@ -13,15 +13,15 @@ class Profile extends Component {
     super(props)
     this.state = {
       hayIntentos:true,
-      intentos:[{}],
+      intentos:this.props.intentos,
       showConfig:false,
       results: []
     }
   }
 
   renderIntentos() {
-    let intentos = this.props.intentos;
-    if(intentos.length !=0) {
+    let intentos = this.state.intentos;
+    if(intentos.length >0) {
       return intentos.map((intento)=> {
         return (
           <Intento
@@ -51,6 +51,8 @@ class Profile extends Component {
   checkGuesses() {
     Meteor.call('guesses.check', {user: this.props.currentUser._id});
   }
+
+
 
   render() {
     const estaLleno = this.state.hayIntentos;
