@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import Modal from 'react-modal';
 import Navegacion from './navbar';
+import Landing from './landing';
 import '../style/App.css';
 
 
@@ -19,31 +20,20 @@ class App extends Component {
         <div className='row'>
           <Navegacion user= {this.props.currentUser}/>
         </div>
-        <div className='row'>
-          <div className='col-md-1'>
-          </div>
           {this.props.currentUser ?
             (
-              <div className='col-md-10'>
-                {React.cloneElement(this.props.children, {...this.state})}
+              <div className='row'>
+                <div className='col-md-1'></div>
+                <div className='col-md-10'>
+                  {React.cloneElement(this.props.children, {...this.state})}
+                </div>
+                <div className='col-md-1'></div>
               </div>
             ):(
-              <div className='col-md-10'>
-                <div className='row'>
-                  <div className='col-md-12'>
-                    <h1>Bienvenido a FootScores!</h1>
-                  </div>
-                </div>
-                <hr className="content-divider"></hr>
-                <div className='row'>
-                  <div className='col-md-12'>
-                    <h3>Regístrate o inicia sesión!</h3>
-                  </div>
-                </div>
+              <div className='row landing'>
+                <Landing/>
               </div>
             )}
-          <div className='col-md-1'></div>
-        </div>
       </div>
     );
   }
