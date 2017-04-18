@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Random } from 'meteor/random';
 import { assert } from 'meteor/practicalmeteor:chai';
 
-import { Guesses } from '../collections/guesses.js';
+import { Guesses } from './collections/guesses.js';
 
 if (Meteor.isServer) {
   describe('Guesses', () => {
