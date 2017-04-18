@@ -12,3 +12,12 @@ if (Meteor.isServer) {
     return Meteor.users.find({}, {username:1, profile:1});
   });
 }
+
+Meteor.methods({
+  'users.udpateInfo'({user, name, picture}) {
+    if(picture)
+      Meteor.users.update(user, { $set: {"profile.name": name, "profile.picture": picture} });
+    else
+      Meteor.users.update(user, { $set: {"profile.name": name} });
+  }
+})
