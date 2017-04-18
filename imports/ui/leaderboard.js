@@ -56,6 +56,7 @@ Leaderboard.propTypes = {
 };
 
 export default createContainer(() => {
+  Meteor.subscribe('allusers')
   return {
     users: Meteor.users.find({}).fetch()
   };

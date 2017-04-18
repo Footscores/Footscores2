@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
@@ -49,3 +50,9 @@ Schemas.Guess = new SimpleSchema({
 
 Guesses.attachSchema(Schemas.Guess);
 export default Guesses;
+
+if (Meteor.isServer) {
+  Meteor.publish('guesses', function publishGuesses() {
+    return Guesses.find();
+  });
+}

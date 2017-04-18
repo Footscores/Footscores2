@@ -155,9 +155,11 @@ function isAvailable(fixture, guesses) {
 
 Leagues.propTypes = {
   currentUser: PropTypes.object,
+  guesses: PropTypes.array
 };
 
 export default createContainer(() => {
+  Meteor.subscribe('guesses');
   return {
     currentUser: Meteor.user(),
     guesses: Guesses.find({user: Meteor.userId()}).fetch()

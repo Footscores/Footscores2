@@ -20,7 +20,7 @@ class Profile extends Component {
   }
 
   renderIntentos() {
-    let intentos = this.state.intentos;
+    let intentos = this.props.intentos;
     if(intentos.length >0) {
       return intentos.map((intento)=> {
         return (
@@ -50,10 +50,9 @@ class Profile extends Component {
 
   checkGuesses() {
     Meteor.call('guesses.check', {user: this.props.currentUser._id});
-    this.setState(
-      {
-        intentos:this.props.intentos
-      });
+    this.setState({
+      intentos:this.props.intentos
+    });
   }
 
 
@@ -159,9 +158,11 @@ class Profile extends Component {
 
 Profile.propTypes = {
   currentUser: PropTypes.object,
+  intentos: PropTypes.array
 };
 
 export default createContainer(() => {
+  Meteor.subscribe('guesses');
   return {
     currentUser: Meteor.user(),
     intentos: Guesses.find({user: Meteor.userId()}).fetch()
