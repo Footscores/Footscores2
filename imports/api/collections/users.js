@@ -14,10 +14,14 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'users.udpateInfo'({user, name, picture}) {
-    if(picture)
-      Meteor.users.update(user, { $set: {"profile.name": name, "profile.picture": picture} });
-    else
-      Meteor.users.update(user, { $set: {"profile.name": name} });
+  'users.udpateInfo'({name, picture}) {
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+    if(picture) {
+      Meteor.users.update(this.userId, { $set: {"profile.name": name, "profile.picture": picture} });
+    } else {
+      Meteor.users.update(this.userId, { $set: {"profile.name": name} });
+    }
   }
 })

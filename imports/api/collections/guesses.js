@@ -74,7 +74,8 @@ Meteor.methods({
   'guesses.update'({id, correct}) {
     Guesses.update(id, {$set : {correct: correct} });
   },
-  'guesses.check'({user}) {
+  'guesses.check'({}) {
+    var user = this.userId;
     var results = football.getMatchesDayBefore();
     var pending = Guesses.find({user: user, correct: { $exists: false }}).fetch();
     for(var i=0; i<pending.length; i++) {

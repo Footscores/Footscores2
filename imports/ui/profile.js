@@ -49,7 +49,7 @@ class Profile extends Component {
   }
 
   checkGuesses() {
-    Meteor.call('guesses.check', {user: this.props.currentUser._id});
+    Meteor.call('guesses.check', {});
     this.setState({
       intentos:this.props.intentos
     });
