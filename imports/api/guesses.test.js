@@ -17,6 +17,7 @@ if (Meteor.isServer) {
         // Find the internal implementation of the insert guess method so we can
        // test it in isolation
        const addGuess = Meteor.server.method_handlers['guesses.insert'];
+       //console.log(Meteor.server);
        // Set up a fake method invocation that looks like what the method expects
        const invocation = { userId };
 
