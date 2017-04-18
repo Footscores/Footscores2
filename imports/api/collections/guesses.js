@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-const Guesses = new Mongo.Collection('guesses');
+export const Guesses = new Mongo.Collection('guesses');
 
 var Schemas = {};
 
