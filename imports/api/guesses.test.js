@@ -21,9 +21,9 @@ if (Meteor.isServer) {
        // Set up a fake method invocation that looks like what the method expects
        const invocation = { userId };
 
-       const date = new Date();
+       const date = Date.now();
        // Run the method with `this` set to the fake invocation
-       addGuess.apply(invocation, [date,'Leicester City FC', 'Sevilla FC', 2, 0]);
+       addGuess.apply(invocation, [{date:date,homeTeam:'Leicester City FC', awayTeam:'Sevilla FC', homeTeamScore:2, awayTeamScore:0}]);
 
        // Verify that the method does what we expected
        assert.equal(Guesses.find().count(), 1);

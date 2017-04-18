@@ -59,11 +59,11 @@ if (Meteor.isServer) {
 
 Meteor.methods({
   'guesses.insert'({date, homeTeam, awayTeam, homeTeamScore, awayTeamScore}){
-    if (!Meteor.userId()) {
+    if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
     Guesses.insert({
-      user: Meteor.userId(),
+      user: this.userId,
       date,
       homeTeam,
       awayTeam,
