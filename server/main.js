@@ -6,7 +6,7 @@ import { Users } from '../imports/api/collections/users.js';
 Meteor.startup(() => {
   // code to run on server at startup
 });
-
+//Deberían terminar la implementación de los usuarios
 Accounts.onCreateUser(function(options, user) {
   user.profile = {
     name: '',
