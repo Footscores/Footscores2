@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 import '../style/App.css';
 
 class Home extends Component {
-
-    /*  constructor(props)
-  {
-    super(props)
-  }*/
-
     render() {
         return (
             <div>
