@@ -1,3 +1,4 @@
+//Faltan hacer tests de estos métodos
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
