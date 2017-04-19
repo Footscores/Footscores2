@@ -1,3 +1,4 @@
+//Para seguridad es importante que el token no esté público (ojo con la historia de github)
 module.exports = {
     hostname: 'https://api.football-data.org/v1/',
     options: {
