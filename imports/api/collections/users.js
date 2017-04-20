@@ -13,6 +13,9 @@ if (Meteor.isServer) {
   });
 }
 
+// Add Validated Method
+// import {ValidatedMethod} from 'meteor/mdg:validated-method';
+
 Meteor.methods({
   'users.udpateInfo'({name, picture}) {
     if (!this.userId) {
