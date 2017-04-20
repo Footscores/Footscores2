@@ -58,6 +58,8 @@ if (Meteor.isServer) {
   });
 }
 
+// Do not forget to protect this method.
+
 Meteor.methods({
   'guesses.insert'({date, homeTeam, awayTeam, homeTeamScore, awayTeamScore}){
     if (!this.userId) {

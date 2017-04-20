@@ -7,6 +7,7 @@ import { Guesses } from './collections/guesses.js';
 if (Meteor.isServer) {
   describe('Guesses', () => {
     describe('methods', () => {
+      // It is a good idea to override auth methods.
       const userId = Random.id();
       let guessId;
 

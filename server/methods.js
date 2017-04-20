@@ -4,6 +4,9 @@ import { HTTP } from 'meteor/http';
 import football from '../imports/api/football-data.js';
 import  Guesses  from '../imports/api/collections/guesses.js';
 
+// You should protect these methods using ValidatedMethod
+// import {ValidatedMethod} from 'meteor/mdg:validated-method';
+
 Meteor.methods({
   'api.nextWeek'({}){
     return football.getMatchesNextWeek();
