@@ -1,0 +1,17 @@
+Veo que ya empezaron con las partes de seguridad porque quitaron el autopublish y de tests en la parte del servidor. 
+Me parece que hasta ahora han seguido con la jerarquía de los documentos de manera adecuada y que el código está bien escrito.
+Para los tests del cliente creo que no han hecho el comando completo de 
+meteor add lmieulet:meteor-coverage practicalmeteor:mocha@2.4.5_6 practicalmeteor:mocha-console-runner
+y también
+meteor npm i --save-dev https://github.com/serut/spacejam/tarball/windows-support-rc4
+
+Y cuando empiecen con usabilidad pueden utilizar esta página https://webstandards.hhs.gov/guidelines/
+Me parece excelente que cuando carguen los partidos esté una animación de que está cargando. Otra buena idea para dar al usuario feedback, 
+sería que cuando se cargan los scores para saber si ha ganado puntos, que salga un modal o un aviso que diga que tiene x puntos, para que el
+usuario sepa que ya cargó. 
+
+También en la leaderboard podrían hacer que el usuario actual pueda ver su nombre resaltado o solo el top 10 y a un lado el rank que ocupa, 
+porque cuando empiecen a ser muchos usuarios, cargar esa página puede ser un problema. 
+
+También podrían incluir paginación en el historial de intentos y dejar claro qué tantos puntos gana una persona dependiendo de qué tan 
+acertada es su apuesta.
