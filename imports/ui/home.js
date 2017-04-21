@@ -24,11 +24,11 @@ class Home extends Component {
                                 <h3>¿Como usar FootScores?</h3>
                                 <hr className="content-divider"></hr>
                                 <ul>
-                                    <li>Ve a la sección de Leagues</li>
-                                    <li>Selecciona tu liga favorita
-                                    </li>
-                                    <li>Adivina el resultado final de los partidos!</li>
-                                    <li>Adivina los resultados para ganar puntos y subir en el Leaderboard!</li>
+                                    <li>Ve a la sección de Ligas</li>
+                                    <li>Selecciona una liga para ver los partidos disponibles</li>
+                                    <li>Adivina cuanto van a quedar!</li>
+                                    <li>Una vez pasen los partidos, ve a tu perfil para recalcular tu puntaje</li>
+                                    <li>Gana 10 puntos por cada marcador que aciertes, y mira como avanzas en el Leaderboard!</li>
                                 </ul>
                             </div>
                         </div>
