@@ -1,4 +1,5 @@
 import { Mongo } from 'meteor/mongo';
+import {ValidatedMethod} from 'meteor/mdg:validated-method';
 import SimpleSchema from 'simpl-schema';
 
 const Users = new Mongo.Collection('allusers');
@@ -13,8 +14,27 @@ if (Meteor.isServer) {
   });
 }
 
-Meteor.methods({
-  'users.udpateInfo'({name, picture}) {
+Users.deny({
+  remove() {
+    return true;
+  }
+});
+
+export const updateInfo = new ValidatedMethod({
+  name: 'users.updateInfo',
+  validate: new SimpleSchema({
+    name: {
+      type: String,
+      optional: false,
+      min: 5,
+      max: 20
+    },
+    picture: {
+      type: String,
+      optional: true
+    }
+  }).validator(),
+  run({name, picture}) {
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
@@ -24,4 +44,4 @@ Meteor.methods({
       Meteor.users.update(this.userId, { $set: {"profile.name": name} });
     }
   }
-})
+});
