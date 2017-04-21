@@ -1,3 +1,4 @@
+//Esta es un archivo con funciones muy importantes, debería tener tests también.
 import { HTTP } from 'meteor/http';
 import config from '../startup/football-data-config.js';
 
