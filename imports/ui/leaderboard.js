@@ -8,6 +8,13 @@ class Leaderboard extends Component {
     super(props);
   };
 
+  checkUser(currUser) {
+    if(Meteor.user().username === currUser.username) {
+        return 'current';
+    }
+    return '';
+  }
+
   render() {
     var i = 0;
     return (
@@ -35,7 +42,7 @@ class Leaderboard extends Component {
                   }).map((user) => {
                     i++;
                     return(
-                      <tr key={i}>
+                      <tr key={i} className={this.checkUser(user)}>
                         <th scope="row" key={i+1}>{i}</th>
                         <td key={i+2}>{user.username}</td>
                         <td key={i+3}>{user.profile.score}</td>
