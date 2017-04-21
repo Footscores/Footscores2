@@ -27,7 +27,7 @@ class Home extends Component {
                                     <li>Ve a la sección de Ligas</li>
                                     <li>Selecciona una liga para ver los partidos disponibles</li>
                                     <li>Adivina cuanto van a quedar!</li>
-                                    <li>Una vez pasen los partidos, ve a tu perfil para recalcular tu puntaje</li>
+                                    <li>Una vez pasen los partidos, ve a tu perfil y da click al botón verde de refrescar para recalcular tu puntaje</li>
                                     <li>Gana 10 puntos por cada marcador que aciertes, y mira como avanzas en el Leaderboard!</li>
                                 </ul>
                             </div>
@@ -47,7 +47,7 @@ class Home extends Component {
                             <div className="box">
                                 <h3>¿Como funciona FootScores?</h3>
                                 <hr className="content-divider"></hr>
-                                <p>En FootScores trabajamos para brindarte la mejor experiencia posible, nuestro servidor se conecta constantemente con un API y obtiene los próximos partidos de las mejores competencias! Cada hora se analizan los valores ingresados por el usuario, se calculan los puntos y se actualiza el Leaderboard.</p>
+                                <p>En FootScores trabajamos para brindarte la mejor experiencia posible. Nuestro servidor se conecta constantemente con un API y obtiene los próximos partidos de las mejores competencias! Todos los intentos que los usuarios ingresen en la página web son almacenados, y el cliente puede volver para recalcular su puntaje, lo cual actualiza inmeidatamente el leaderboard.</p>
                             </div>
                         </div>
 
