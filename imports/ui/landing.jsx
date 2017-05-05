@@ -19,6 +19,7 @@ class Landing extends Component {
         <div className="row">
           <div className="col-md-12">
             <h3>Regístrate o inicia sesión!</h3>
+            <h4>Utiliza el botón verde en la barra de navegacion</h4>
           </div>
         </div>
       </div>
