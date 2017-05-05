@@ -1,13 +1,17 @@
+/* eslint-disable no-plusplus, no-empty-pattern, object-shorthand, prefer-template,
+import/no-unresolved, no-underscore-dangle, import/extensions, import/no-extraneous-dependencies,
+import/no-named-as-default, no-unused-vars, no-param-reassign
+*/
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
-import { Guesses } from '../imports/api/collections/guesses.js';
-import { Users } from '../imports/api/collections/users.js';
+import { Guesses } from '../imports/api/collections/guesses';
+import { Users } from '../imports/api/collections/users';
 
 Meteor.startup(() => {
   // code to run on server at startup
 });
 
-Accounts.onCreateUser(function(options, user) {
+Accounts.onCreateUser((options, user) => {
   user.profile = {
     name: '',
     picture: 'http://i.imgur.com/a8K6rWA.png',
@@ -15,7 +19,7 @@ Accounts.onCreateUser(function(options, user) {
     longestStreak: 0,
     currentStreak: 0,
     favoriteCompetition: '',
-    favoriteTeam: []
+    favoriteTeam: [],
   };
   return user;
 });
