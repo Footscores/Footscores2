@@ -21,11 +21,16 @@
     "simpl-schema": "^0.2.3"
   },
   "devDependencies": {
-    "eslint": "^3.15.0",
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-meteor": "^0.1.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-meteor": "^4.0.1",
+    "eslint-plugin-react": "^6.10.3"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -33,6 +38,7 @@
       "allowImportExportEverywhere": true
     },
     "plugins": [
+      "import",
       "meteor"
     ],
     "extends": [
@@ -40,8 +46,12 @@
       "plugin:meteor/recommended"
     ],
     "settings": {
+      "meteor/no-session": "off",
+      "import/no-extraneous-dependencies": "off",
       "import/resolver": "meteor"
     },
-    "rules": {}
+    "rules": {
+      "no-unresolved": 0
+    }
   }
 }
