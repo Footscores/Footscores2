@@ -12,7 +12,7 @@ import '../imports/startup/accounts-config.js';
 import App from '../imports/ui/App.jsx';
 import Home from '../imports/ui/home.jsx';
 import Leaderboard from '../imports/ui/leaderboard.jsx';
-import Leagues from '../imports/ui/leagues.js';
+import Leagues from '../imports/ui/leagues.jsx';
 import Welcome from '../imports/ui/welcome.js';
 import Profile from '../imports/ui/profile.js';
 
