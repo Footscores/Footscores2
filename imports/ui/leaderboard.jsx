@@ -5,7 +5,6 @@ react/require-default-props, react/prefer-stateless-function, class-methods-use-
 */
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-import '../style/App.css';
 
 class Leaderboard extends Component {
 
