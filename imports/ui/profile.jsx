@@ -1,28 +1,53 @@
+/* eslint-disable no-plusplus, no-empty-pattern, object-shorthand, prefer-template,
+import/no-unresolved, no-underscore-dangle, import/extensions, import/no-extraneous-dependencies,
+import/no-named-as-default, no-undef, react/prop-types, react/forbid-prop-types, arrow-body-style,
+react/require-default-props, react/prefer-stateless-function, react/no-unused-prop-types,
+jsx-a11y/no-static-element-interactions, react/jsx-first-prop-new-line
+*/
 import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import '../style/App.css';
 import Intento from './intento';
 
-import  Guesses  from '../api/collections/guesses.js';
+import Guesses from '../api/collections/guesses.js';
 
 
 class Profile extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      hayIntentos:true,
-      intentos:this.props.intentos,
-      showConfig:false,
-      results: []
-    }
+      hayIntentos: true,
+      intentos: this.props.intentos,
+      showConfig: false,
+      results: [],
+    };
+  }
+
+  checkGuesses() {
+    Meteor.call('guesses.check', {});
+    this.setState({
+      intentos: this.props.intentos,
+    });
+  }
+
+  configClick() {
+    this.setState({
+      showConfig: true,
+    });
+  }
+
+  backClick() {
+    this.setState({
+      showConfig: false,
+    });
   }
 
   renderIntentos() {
-    let intentos = this.props.intentos;
-    if(intentos.length >0) {
-      return intentos.map((intento)=> {
+    const intentos = this.props.intentos;
+    if (intentos.length > 0) {
+      return intentos.map((intento) => {
         return (
           <Intento
             key={intento._id}
@@ -35,27 +60,6 @@ class Profile extends Component {
       return(<h3>No hay intentos</h3>);
     }
   }
-
-  configClick() {
-    this.setState({
-      showConfig:true
-    });
-  }
-
-  backClick() {
-    this.setState({
-      showConfig:false
-    });
-  }
-
-  checkGuesses() {
-    Meteor.call('guesses.check', {});
-    this.setState({
-      intentos:this.props.intentos
-    });
-  }
-
-
 
   render() {
     const estaLleno = this.state.hayIntentos;
