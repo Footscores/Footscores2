@@ -79,8 +79,8 @@ class Partido extends Component {
                       )
                       : (<form>
                         <div className="row">
-                          <input className="col-md-2 col-xs-6" type="number" name="homeGoals" aria-label="Campo para ingresar goles equipo local" onChange={this.setHomeGoals.bind(this)} />
-                          <input className="col-md-2 col-xs-6" type="number" name="awayGoals" aria-label="Campo para ingresar goles equipo visitante" onChange={this.setAwayGoals.bind(this)} />
+                          <input className="col-md-2 col-xs-6" type="number" name="homeGoals" aria-label={"Campo para ingresar goles equipo "+this.props.partido.homeTeamName} onChange={this.setHomeGoals.bind(this)} />
+                          <input className="col-md-2 col-xs-6" type="number" name="awayGoals" aria-label={"Campo para ingresar goles equipo "+this.props.partido.awayTeamName} onChange={this.setAwayGoals.bind(this)} />
                         </div>
                         <div className="row">
                           {/* <input type="text" onChange={(event) => {
