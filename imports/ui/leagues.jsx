@@ -8,7 +8,7 @@ import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import '../style/App.css';
-import Partido from './partido.js';
+import Partido from './partido.jsx';
 
 import Guesses from '../api/collections/guesses.js';
 
