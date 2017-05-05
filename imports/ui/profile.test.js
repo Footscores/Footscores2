@@ -11,7 +11,10 @@ if(Meteor.isClient){
 
   describe('Profile', () => {
     it('Should render properly', () => {
-      const profile = Factory.build('profile');
+      const prof = mount(<Profile />);
+      expect(prof.containsMatchingElement(<h4>Estadísticas:</h4>)).to.equal(true);
+    });
+    it('Length should be one', () => {
       const prof = mount(<Profile />);
       chai.assert.equal(prof.length, 1);
     });
