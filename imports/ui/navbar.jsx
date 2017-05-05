@@ -17,9 +17,11 @@ class Navegacion extends Component {
       <div>
         <Navbar className="navbar-inverse">
           <Navbar.Header>
-            <Navbar.Brand>
-              FootScores
-            </Navbar.Brand>
+            <LinkContainer to="/welcome" eventKey={0}>
+              <Navbar.Brand>
+                FootScores
+              </Navbar.Brand>
+            </LinkContainer>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>

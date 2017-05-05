@@ -24,6 +24,7 @@ Meteor.startup(() => {
       <Route path="home" component={Home} />
       <Route path="leagues" component={Leagues} />
       <Route path="profile" component={Profile} />
+      <Route path="welcome" component={Welcome} />
     </Route>
   </Router>, document.getElementById('render-target'));
 });
