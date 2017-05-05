@@ -1,3 +1,7 @@
+/* eslint-disable no-plusplus, no-empty-pattern, object-shorthand, prefer-template,
+import/no-unresolved, no-underscore-dangle, import/extensions, import/no-extraneous-dependencies,
+import/no-named-as-default, no-undef, react/no-find-dom-node, react/no-string-refs
+*/
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Template } from 'meteor/templating';
