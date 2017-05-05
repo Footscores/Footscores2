@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Factory } from 'meteor/dburles:factory';
 import React from 'react';
 import { shallow, mount } from 'enzyme';
