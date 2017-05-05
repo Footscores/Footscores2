@@ -101,7 +101,7 @@ class Profile extends Component {
                       </button>
                     </div>
                     <div className="row">
-                      <img alt="Imagen de Perfil" src={this.props.currentUser.profile.picture} id="profilePic" className="img-responsive" />
+                      <img alt="Imagen de Perfil" src="img/profile.png" id="profilePic" className="img-responsive" />
                     </div>
                     <div className="row">
                       {
