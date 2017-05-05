@@ -14,7 +14,7 @@ Meteor.startup(() => {
 Accounts.onCreateUser((options, user) => {
   user.profile = {
     name: '',
-    picture: 'http://i.imgur.com/a8K6rWA.png',
+    picture: 'https://i.imgur.com/a8K6rWA.png',
     score: 0,
     longestStreak: 0,
     currentStreak: 0,
