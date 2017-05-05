@@ -18,14 +18,19 @@
     "react-router": "^3.0.2",
     "react-router-bootstrap": "^0.23.1",
     "require": "^2.4.20",
-    "simpl-schema": "^0.2.3"
+    "simpl-schema": "^0.2.3",
+    "react-test-renderer": "^15.5.4"
   },
   "devDependencies": {
+    "enzyme": "^2.8.2",
     "eslint": "^3.15.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "ignore-styles": "^5.0.1",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "1.3.0"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -33,6 +38,7 @@
       "allowImportExportEverywhere": true
     },
     "plugins": [
+      "import",
       "meteor"
     ],
     "extends": [
