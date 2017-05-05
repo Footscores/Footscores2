@@ -26,6 +26,8 @@ if(Meteor.isClient){
   });*/
 
   describe('Partido', () => {
+      it('Should render match properly', () => {
+      
         chai.assert(true);
       });
     });
