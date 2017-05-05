@@ -14,7 +14,7 @@ import Home from '../imports/ui/home.jsx';
 import Leaderboard from '../imports/ui/leaderboard.jsx';
 import Leagues from '../imports/ui/leagues.jsx';
 import Welcome from '../imports/ui/welcome.js';
-import Profile from '../imports/ui/profile.js';
+import Profile from '../imports/ui/profile.jsx';
 
 Meteor.startup(() => {
   render(<Router history={browserHistory}>
