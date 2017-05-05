@@ -1,52 +1,55 @@
+/* eslint-disable no-plusplus, no-empty-pattern, object-shorthand, prefer-template,
+import/no-unresolved, no-underscore-dangle, import/extensions, import/no-extraneous-dependencies,
+import/no-named-as-default, no-undef, prefer-arrow-callback
+*/
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
-import football from '../football-data.js';
 
 export const Guesses = new Mongo.Collection('guesses');
 
-var Schemas = {};
+const Schemas = {};
 
 Schemas.Guess = new SimpleSchema({
   user: {
     type: String,
-    label: "Owner of this guess",
-    optional: false
+    label: 'Owner of this guess',
+    optional: false,
   },
   date: {
     type: Date,
-    label: "Date the match is taking place",
-    optional: false
+    label: 'Date the match is taking place',
+    optional: false,
   },
   homeTeam: {
     type: String,
-    label: "Home team name",
+    label: 'Home team name',
     max: 100,
-    optional: false
+    optional: false,
   },
   awayTeam: {
     type: String,
-    label: "Away team name",
+    label: 'Away team name',
     max: 100,
-    optional: false
+    optional: false,
   },
   homeTeamScore: {
     type: SimpleSchema.Integer,
-    label: "Guessed score for the home team",
+    label: 'Guessed score for the home team',
     min: 0,
-    optional: false
+    optional: false,
   },
   awayTeamScore: {
     type: SimpleSchema.Integer,
-    label: "Guessed score for the away team",
+    label: 'Guessed score for the away team',
     min: 0,
-    optional: false
+    optional: false,
   },
   correct: {
     type: Boolean,
-    label: "Indicates whether the guess was correct or not",
-    optional: true
-  }
+    label: 'Indicates whether the guess was correct or not',
+    optional: true,
+  },
 });
 
 Guesses.attachSchema(Schemas.Guess);
@@ -59,7 +62,7 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'guesses.insert'({date, homeTeam, awayTeam, homeTeamScore, awayTeamScore}){
+  'guesses.insert'({ date, homeTeam, awayTeam, homeTeamScore, awayTeamScore }) {
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
@@ -69,10 +72,10 @@ Meteor.methods({
       homeTeam,
       awayTeam,
       homeTeamScore,
-      awayTeamScore
+      awayTeamScore,
     });
   },
-  'guesses.update'({id, correct}) {
-    Guesses.update(id, {$set : {correct: correct} });
-  }
-})
+  'guesses.update'({ id, correct }) {
+    Guesses.update(id, { $set: { correct: correct } });
+  },
+});
