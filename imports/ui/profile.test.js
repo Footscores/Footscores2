@@ -14,7 +14,6 @@ if(Meteor.isClient){
       const profile = Factory.build('profile');
       const prof = mount(<Profile />);
       chai.assert.equal(prof.length, 1);
-      expect(prof.containsMatchingElement(<img alt="Imagen de Perfil" src="https://i.imgur.com/a8K6rWA.png" id="profilePic" className="img-responsive" />)).to.equal(true);
     });
   });
 
