@@ -22,16 +22,16 @@ if(Meteor.isClient){
             'username': 'testUser',
             'profile':{'score':21}
         };
-
     });
     it('Should render leaderboard properly', () => {
 
-      /*const match = shallow(<Partido partido={partido} />);*/
       const result = mount(<Leaderboard />);
       chai.assert(result.find('table').hasClass('table'));
+    });
+    it('Length should be one', () => {
+
+      const result = mount(<Leaderboard />);
       chai.assert.equal(result.length,1);
-    /*  expect(match.containsMatchingElement(<td className='col-md-4 col-xs-3 matches'>Borussia Dortmund</td>)).to.equal(true);
-      expect(match.containsMatchingElement(<p>Buena Suerte!</p>)).to.equal(false);*/
     });
   });
 
