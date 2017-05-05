@@ -81,15 +81,15 @@ class Profile extends Component {
                     <div className="row">
                       <div className="form-group">
                         <label>Nombre:</label>
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control"  aria-label="Nombre"/>
                       </div>
-                      <div className="form-group">
+                      <div className="form-group" >
                         <label>Foto:</label>
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control"  aria-label="Foto"/>
                       </div>
                       <div className="form-group">
                         <label>Equipo Favorito:</label>
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control"  aria-label="Equipo Favorito"/>
                       </div>
                     </div>
                   </div>
