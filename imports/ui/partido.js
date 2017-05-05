@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-import '../style/App.css';
 
 class Partido extends Component {
 
