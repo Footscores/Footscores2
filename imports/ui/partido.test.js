@@ -1,8 +1,8 @@
 import { Factory } from 'meteor/dburles:factory';
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { chai, expect } from 'meteor/practicalmeteor:chai';
-import Partido from './partido.js';
+import Partido from './partido.jsx';
 
 
 if(Meteor.isClient){
@@ -23,11 +23,12 @@ if(Meteor.isClient){
         result:{goalsAwayTeam:null, goalsHomeTeam:null},
         status:"TIMED"
       });
-      const match = shallow(<Partido partido={partido} />);
+      /*const match = shallow(<Partido partido={partido} />);*/
+      const match = mount(<Partido partido={partido} />);
       chai.assert.equal(match.length,1);
-      expect(match.contains(<p>Buena Suerte!</p>)).to.equal(false);
-      /*expect(match.contains(<td className='col-md-4 col-xs-3 matches'>AS Monaco FC</td>)).to.equal(true);
-      expect(match.contains(<td className='col-md-4 col-xs-3 matches'>Borussia Dortmund</td>)).to.equal(true);*/
+      expect(match.containsMatchingElement(<td className='col-md-4 col-xs-3 matches'>AS Monaco FC</td>)).to.equal(true);
+      expect(match.containsMatchingElement(<td className='col-md-4 col-xs-3 matches'>Borussia Dortmund</td>)).to.equal(true);
+      expect(match.containsMatchingElement(<p>Buena Suerte!</p>)).to.equal(false);
     });
   });
 
