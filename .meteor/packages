@@ -28,3 +28,4 @@ mdg:validated-method
 dburles:factory
 dispatch:mocha
 practicalmeteor:mocha-console-runner
+hwillson:stub-collections

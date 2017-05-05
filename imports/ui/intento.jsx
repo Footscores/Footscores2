@@ -4,7 +4,6 @@ import/no-named-as-default, no-undef, react/prop-types, react/forbid-prop-types,
 react/require-default-props, no-else-return
 */
 import React, { Component } from 'react';
-import '../style/App.css';
 
 class Intento extends Component {
 

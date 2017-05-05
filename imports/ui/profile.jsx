@@ -8,7 +8,6 @@ react/jsx-no-bind, jsx-a11y/label-has-for
 import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-import '../style/App.css';
 import Intento from './intento';
 
 import Guesses from '../api/collections/guesses.js';
