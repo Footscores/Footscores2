@@ -23,13 +23,18 @@
   },
   "devDependencies": {
     "enzyme": "^2.8.2",
-    "eslint": "^3.15.0",
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-meteor": "^0.1.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0",
-    "ignore-styles": "^5.0.1",
+    "eslint-plugin-meteor": "^4.0.1",
+    "eslint-plugin-react": "^6.10.3",
     "mocha": "^3.2.0",
+    "ignore-styles": "^5.0.1",
     "mocha-lcov-reporter": "1.3.0"
   },
   "eslintConfig": {
@@ -46,8 +51,12 @@
       "plugin:meteor/recommended"
     ],
     "settings": {
+      "meteor/no-session": "off",
+      "import/no-extraneous-dependencies": "off",
       "import/resolver": "meteor"
     },
-    "rules": {}
+    "rules": {
+      "no-unresolved": 0
+    }
   }
 }
